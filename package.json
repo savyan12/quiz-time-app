@@ -17,12 +17,14 @@
     "@capacitor/cli": "^7.4.3",
     "@capacitor/core": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
+    "animate.css": "^4.1.1",
     "pinia": "^3.0.3",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1",
     "vuetify": "^3.9.7"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "prettier": "3.6.2",
     "vite": "^7.0.6",

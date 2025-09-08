@@ -1,11 +1,79 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <router-view></router-view>
 </template>
+<script setup></script>
+<style>
+/* fonts */
+/* Almarai */
+@font-face {
+  font-family: 'Almarai';
+  src: url('@/assets/fonts/Almarai/Almarai-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Almarai';
+  src: url('@/assets/fonts/Almarai/Almarai-Bold.ttf');
+  font-weight: Bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Almarai';
+  src: url('@/assets/fonts/Almarai/Almarai-ExtraBold.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+/* TheYearofHandicrafts */
+@font-face {
+  font-family: 'TheYearofHandicrafts';
+  src: url('@/assets/fonts/TheYearofHandicrafts/TheYearofHandicrafts-Regular.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Nunito */
+@font-face {
+  font-family: 'Nunito';
+  src: url('@/assets/fonts/Nunito/Nunito-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('@/assets/fonts/Nunito/Nunito-Bold.ttf');
+  font-weight: Bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('@/assets/fonts/Nunito/Nunito-ExtraBold.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
 
-<style scoped></style>
+/* css */
+.primary-font {
+  font-family: 'Almarai';
+}
+.secondary-font {
+  font-family: 'TheYearofHandicrafts';
+}
+.english-font {
+  font-family: 'Nunito';
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  color: #2c3e50;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Almarai';
+}
+
+/*Animation duration */
+
+.animate__animated {
+  --animate-duration: 0.3s;
+}
+</style>
