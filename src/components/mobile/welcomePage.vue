@@ -8,15 +8,13 @@
       <h2>مرحباً بك !</h2>
       <p>
         هذا هو تطبيق الإختبارات الاول من نوعه موجه لطلبة
-        <span class="text-blue">كلية التقنية الإلكترونية</span> يوفر اختبارات
-        شاملة لكل المواد الدراسية
+        <span class="text-blue">كلية التقنية الإلكترونية</span> يوفر اختبارات شاملة لكل المواد
+        الدراسية
       </p>
     </div>
     <div class="btn-conatiner">
       <v-btn class="login" elevation="0" to="/auth/login">تسجيل الدخول</v-btn>
-      <v-btn class="bg-transparent" elevation="0" to="/auth/signup"
-        >تسجيل</v-btn
-      >
+      <v-btn class="bg-transparent" elevation="0" to="/auth/signup">تسجيل</v-btn>
     </div>
   </div>
 </template>
@@ -26,8 +24,9 @@
   padding: 20px;
   width: 100%;
   min-height: 100vh;
-  background-image: url("@/assets/background/welcome.png");
+  background-image: url('@/assets/background/welcome.png');
   background-size: 100% 100vh;
+  margin-bottom: 10px;
   /* flex  */
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@
 }
 .welcome-message p {
   line-height: 25px;
-  width: 95%;
+  width: 92%;
   color: #756f6f;
 }
 .welcome-message span {
@@ -65,9 +64,10 @@
   font-weight: bold;
 }
 .btn-conatiner {
+  width: 70%;
   display: flex !important;
   align-items: center !important;
-  gap: 20px;
+  justify-content: space-between;
 }
 .v-btn {
   width: 55%;

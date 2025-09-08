@@ -7,23 +7,27 @@
       </div>
       <v-btn variant="text" to="/auth/login">عرض المزيد</v-btn>
     </div>
-    <div class="tasks my-1">
-      <v-row class="pa-1">
-        <v-col col="3" v-for="value in 4" :key="value">
-          <v-sheet class="bg-white px-4" width="100%" height="85">
-            <h4 class="w-100">المصفوفات</h4>
-            <div class="time-and-type">
-              <v-chip color="#C05AFF" size="small">رياضة 1</v-chip>
-              <div class="time">
-                <p>1d:3h</p>
-              </div>
+    <v-row class="my-1">
+      <v-col cols="6" v-for="value in 4" :key="value">
+        <v-card elevation="0">
+          <v-card-title style="font-size: 15px">كلام كلام كلام بللاللابللب</v-card-title>
+          <div class="time-and-type">
+            <v-chip color="#F82B74" size="small">رياضة 1</v-chip>
+            <div class="time">
+              <p>1d:3h</p>
+              <v-icon size="15" color="red">qt:qt-clock</v-icon>
             </div>
-          </v-sheet>
-        </v-col>
-      </v-row>
-    </div>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
+<script setup>
+const titleModify = (title) => {
+  return title.split(' ', 2).join('  ') + ' ...'
+}
+</script>
 <style scoped>
 .tasks-card {
   direction: rtl;
@@ -44,15 +48,25 @@
   align-items: center;
   gap: 8px;
 }
-.v-sheet {
-  padding: 8px;
-  border-radius: 15px;
+.v-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 9px 3px !important;
+  height: 100px;
+  border-radius: 20px;
 }
-.time-and-type {
-  margin-top: 20px;
+.v-card .time-and-type {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+.v-card .time-and-type .time {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
 }
 </style>

@@ -1,12 +1,11 @@
 <template>
-  <v-sheet class="card mx-auto" height="160" elevation="1">
+  <v-sheet class="card mx-auto" width="95%" height="160" elevation="1">
     <img src="@/assets/images/quiz-time-cup.png" alt="cup" />
     <div class="container">
       <div class="text-box">
         <h2 class="title my-1">تحدي اليوم</h2>
         <p class="text">
-          اكسب المزيد من النقاط عبر حل التحديات اليومية و تصدر ضمن افضل 50 طالب
-          داخل التطبيق
+          اكسب المزيد من النقاط عبر حل التحديات اليومية و تصدر ضمن افضل 50 طالب داخل التطبيق
         </p>
         <button class="btn">اختبر نفسك الان</button>
       </div>
@@ -20,7 +19,7 @@
   position: relative;
   margin-top: 15px;
   background: #495eca;
-  background-image: url("@/assets/background/card.png");
+  background-image: url('@/assets/background/card.png');
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -46,9 +45,9 @@
   font-size: 12px;
 }
 .v-sheet img {
-  width: 270px;
+  width: 246px;
   position: absolute;
-  top: -50%;
-  left: -18%;
+  top: -43%;
+  left: -20%;
 }
 </style>

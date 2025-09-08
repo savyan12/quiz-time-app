@@ -7,13 +7,19 @@
       <DailyChallenge />
       <!-- tasks -->
       <tasksCard />
+      <!-- Appointments -->
+      <AppointmentsCard />
+      <!-- Last activites -->
+      <LatestActivities />
     </v-container>
   </div>
 </template>
 <script setup>
-import NavBar from "./NavBar.vue";
-import DailyChallenge from "./DailyChallenge.vue";
-import tasksCard from "./TasksCard.vue";
+import NavBar from './NavBar.vue'
+import DailyChallenge from './DailyChallenge.vue'
+import tasksCard from './TasksCard.vue'
+import AppointmentsCard from './AppointmentsCard.vue'
+import LatestActivities from './LatestActivities.vue'
 </script>
 <style scoped>
 .home-page {

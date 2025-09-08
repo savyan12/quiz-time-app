@@ -1,7 +1,19 @@
 <template>
-  <router-view></router-view>
+  <BottomNavigation />
+  <router-view v-slot="{ Component, route }">
+    <transition
+      name="page"
+      :enter-active-class="route.meta.animation.enterActive || 'animate__animated animate__fadeIn'"
+      :leave-active-class="route.meta.animation.leaveActive || 'animate__animated animate__fadeIn'"
+      mode="out-in"
+    >
+      <component :is="Component" :key="route.fullPath" />
+    </transition>
+  </router-view>
 </template>
-<script setup></script>
+<script setup>
+import BottomNavigation from './components/global/BottomNavigation.vue'
+</script>
 <style>
 /* fonts */
 /* Almarai */
@@ -65,6 +77,7 @@
   margin: 0;
 }
 #app {
+  position: relative;
   color: #2c3e50;
   width: 100%;
   min-height: 100vh;

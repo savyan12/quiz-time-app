@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <div class="nav-bar">
+    <v-layout>
       <NavigationDrawer
         :active="active"
         @update:active="
           (value) => {
-            active = value;
+            active = value
           }
         "
       />
+    </v-layout>
+    <div class="nav-bar">
       <v-avatar size="50" color="blue">
         <img
           class="w-100"
@@ -38,9 +40,9 @@
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
-import NavigationDrawer from "./NavigationDrawer.vue";
-const active = ref(false);
+import { ref } from 'vue'
+import NavigationDrawer from './NavigationDrawer.vue'
+const active = ref(false)
 </script>
 <style scoped>
 .container {

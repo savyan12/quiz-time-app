@@ -6,17 +6,14 @@
       <TextInput placeholder="رقم الهاتف" />
       <TextInput placeholder=" كلمة السر" type="password" />
       <span>هل نسيت كلمة السر ؟</span>
-      <v-btn class="secondary-font" elevation="3" style="font-size: 20px"
+      <v-btn class="secondary-font" elevation="3" style="font-size: 20px" to="/home"
         >تسجيل الدخول</v-btn
       >
-      <h4 class="my-2" @click="$router.push('/auth/signup')">
-        إنشاء حساب جديد
-      </h4>
+      <h4 class="my-2" @click="$router.push('/auth/signup')">إنشاء حساب جديد</h4>
       <div class="o-aurh-box">
         <p class="o-aurh-title">الاستمرار بإستخدام</p>
         <div class="box-btns">
           <v-btn elevation="0"><v-icon size="24">qt:qt-google</v-icon></v-btn>
-          <v-btn elevation="0"><v-icon size="24">qt:qt-facebook</v-icon></v-btn>
           <v-btn elevation="0"><v-icon size="24">qt:qt-apple</v-icon></v-btn>
         </div>
       </div>
@@ -24,7 +21,7 @@
   </div>
 </template>
 <script setup>
-import TextInput from "@/components/global/TextInput.vue";
+import TextInput from '@/components/global/TextInput.vue'
 </script>
 <style scoped>
 .loginPage {
@@ -32,8 +29,8 @@ import TextInput from "@/components/global/TextInput.vue";
   padding: 5px;
   width: 100%;
   min-height: 100vh;
-  background-image: url("@/assets/background/auth.png");
-  background-size: 100vw 100vh;
+  background-image: url('@/assets/background/auth.png');
+  background-size: 100% 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

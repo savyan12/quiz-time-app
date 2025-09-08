@@ -8,15 +8,12 @@
       <TextInput placeholder=" كلمة السر" type="password" />
       <TextInput placeholder=" تأكيد كلمة السر" type="password" />
       <span>هل نسيت كلمة السر ؟</span>
-      <v-btn class="secondary-font" elevation="3" style="font-size: 20px">
-        إنشاء حساب
-      </v-btn>
+      <v-btn class="secondary-font" elevation="3" style="font-size: 20px"> إنشاء حساب </v-btn>
       <h4 class="my-1" @click="$router.push('/auth/login')">عندك حساب ؟</h4>
       <div class="o-aurh-box">
         <p class="o-aurh-title">الاستمرار بإستخدام</p>
         <div class="box-btns">
           <v-btn elevation="0"><v-icon size="24">qt:qt-google</v-icon></v-btn>
-          <v-btn elevation="0"><v-icon size="24">qt:qt-facebook</v-icon></v-btn>
           <v-btn elevation="0"><v-icon size="24">qt:qt-apple</v-icon></v-btn>
         </div>
       </div>
@@ -24,7 +21,7 @@
   </div>
 </template>
 <script setup>
-import TextInput from "@/components/global/TextInput.vue";
+import TextInput from '@/components/global/TextInput.vue'
 </script>
 <style scoped>
 .signup-page {
@@ -32,7 +29,7 @@ import TextInput from "@/components/global/TextInput.vue";
   padding: 5px;
   width: 100%;
   min-height: 100vh;
-  background-image: url("@/assets/background/auth.png");
+  background-image: url('@/assets/background/auth.png');
   background-size: 100vw 100vh;
   display: flex;
   flex-direction: column;
