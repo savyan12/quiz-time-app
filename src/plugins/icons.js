@@ -11,6 +11,9 @@ import CirclePlusIcon from '@/components/icons/CirclePlusIcon.vue'
 import PenOutlinedIcon from '@/components/icons/PenOutlinedIcon.vue'
 import TashOutlinedIcon from '@/components/icons/TashOutlinedIcon.vue'
 import CircleInfoIcon from '@/components/icons/CircleInfoIcon.vue'
+import OnlineUser from '@/components/icons/OnlineUser.vue'
+import TermsIcon from '@/components/icons/TermsIcon.vue'
+import PcCodeIcon from '@/components/icons/PcCodeIcon.vue'
 const BpIcons = {
   facebook: FacebookIcon,
   apple: AppleIcon,
@@ -24,6 +27,9 @@ const BpIcons = {
   pen: PenOutlinedIcon,
   trashOutlined: TashOutlinedIcon,
   circleInfo: CircleInfoIcon,
+  onlineUser: OnlineUser,
+  terms: TermsIcon,
+  pcCode: PcCodeIcon,
 }
 
 const QTIconSet = {

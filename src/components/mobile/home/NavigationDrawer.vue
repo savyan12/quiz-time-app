@@ -13,37 +13,55 @@
         <h3>سفيان الترهوني</h3>
       </div>
     </v-sheet>
+    <div class="list">
+      <v-btn variant="text" v-for="(item, i) in items" :key="i">
+        <div class="list-item">
+          <v-icon :icon="item.icon" size="23" />
+          <h4 v-text="item.text"></h4>
+        </div>
+      </v-btn>
+    </div>
   </v-navigation-drawer>
 </template>
 
 <script setup>
-import { defineProps, ref, watch, defineEmits } from "vue";
+import { defineProps, ref, watch, defineEmits } from 'vue'
 
 const props = defineProps({
   active: {
     type: Boolean,
     default: false,
   },
-});
+})
 
-const emit = defineEmits(["update:active"]);
-const status = ref(props.active);
+const emit = defineEmits(['update:active'])
+const status = ref(props.active)
+const items = [
+  { text: 'الرئيسية', icon: 'fas fa-home' },
+  { text: 'الاقسام', icon: 'fas fa-list' },
+  { text: 'المهام', icon: 'fas fa-book' },
+  { text: 'الملف الشخصي', icon: 'fas fa-user' },
+  { text: 'المواعيد', icon: 'fas fa-calendar ' },
+  { text: 'انظم الى المساهمين', icon: 'fas fa-users-gear' },
+  { text: 'سياسة الاستخدام', icon: 'fas fa-address-book' },
+  { text: 'عن المطورين', icon: 'fas fa-code' },
+]
 
 watch(
   () => props.active,
   (newVal) => {
-    status.value = newVal;
-  }
-);
+    status.value = newVal
+  },
+)
 
 watch(status, (newVal) => {
-  emit("update:active", newVal);
-});
+  emit('update:active', newVal)
+})
 </script>
 <style scoped>
 .v-navigation-drawer {
   direction: ltr;
-  background: linear-gradient(to bottom, #5067da, #24337e);
+  background: linear-gradient(to bottom, #12a6ec, #0a639e);
 }
 .v-sheet {
   padding: 30px 13px;
@@ -53,5 +71,23 @@ watch(status, (newVal) => {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.v-list {
+  color: #ffffff !important;
+}
+
+.list {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+  color: white;
+}
+.list .list-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 </style>

@@ -8,13 +8,13 @@
       <v-btn variant="text" to="/home/tasks">عرض المزيد</v-btn>
     </div>
     <v-row class="my-1">
-      <v-col cols="6" v-for="value in 4" :key="value">
+      <v-col cols="6" v-for="task in tasks" :key="task">
         <v-card elevation="0">
-          <v-card-title style="font-size: 15px">كلام </v-card-title>
+          <v-card-title style="font-size: 15px">{{ task.title }} </v-card-title>
           <div class="time-and-type">
-            <v-chip color="#F82B74" size="small">رياضة 1</v-chip>
+            <v-chip color="#F82B74" size="small">{{ task.type }}</v-chip>
             <div class="time">
-              <p>1d:3h</p>
+              <p>{{ task.time }}</p>
               <v-icon size="15" color="red">qt:qt-clock</v-icon>
             </div>
           </div>
@@ -24,9 +24,30 @@
   </div>
 </template>
 <script setup>
-const titleModify = (title) => {
-  return title.split(' ', 2).join('  ') + ' ...'
-}
+import { ref } from 'vue'
+
+const tasks = ref([
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
+  {
+    title: 'تسليم واجب الإحصاء',
+    type: 'إحصاء',
+    time: '1d:5h',
+  },
+  {
+    title: 'تقرير معمل إلكترونية 2',
+    type: 'إلكترونية 2',
+    time: '3d:2h',
+  },
+  {
+    title: 'تنزيل linux',
+    type: 'صيانة',
+    time: '4d:6h',
+  },
+])
 </script>
 <style scoped>
 .tasks-card {
