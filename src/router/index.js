@@ -23,8 +23,8 @@ const router = createRouter({
         hideBottomNavigation: false,
         animation: {
           isAnimated: true,
-          enterActive: 'animate__animated animate__fadeInUp',
-          leaveActive: 'animate__animated animate__fadeOutUp',
+          enterActive: 'animate__animated animate__fadeInDown',
+          leaveActive: 'animate__animated animate__fadeOutDown',
         },
       },
       component: () => import('../Views/HomeView.vue'),
@@ -36,8 +36,8 @@ const router = createRouter({
         hideBottomNavigation: false,
         animation: {
           isAnimated: true,
-          enterActive: 'animate__animated animate__fadeInUp',
-          leaveActive: 'animate__animated animate__fadeOutUp',
+          enterActive: 'animate__animated animate__fadeInDown',
+          leaveActive: 'animate__animated animate__fadeOutDown',
         },
       },
       component: () => import('../Views/LibraryView.vue'),
@@ -49,8 +49,8 @@ const router = createRouter({
         hideBottomNavigation: false,
         animation: {
           isAnimated: true,
-          enterActive: 'animate__animated animate__fadeInUp',
-          leaveActive: 'animate__animated animate__fadeOutUp',
+          enterActive: 'animate__animated animate__fadeInDown',
+          leaveActive: 'animate__animated animate__fadeOutDown',
         },
       },
       component: () => import('../Views/RankView.vue'),

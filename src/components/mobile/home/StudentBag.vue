@@ -69,5 +69,6 @@ const chunkedData = computed(() => {
   color: #ffffff;
   background: linear-gradient(to left, #119ce1, #0c5ea0);
   font-weight: bold;
+  font-size: 13px;
 }
 </style>

@@ -51,4 +51,8 @@
   align-items: center;
   gap: 10px;
 }
+.v-btn {
+  color: #2c3e50;
+  font-size: 13px;
+}
 </style>

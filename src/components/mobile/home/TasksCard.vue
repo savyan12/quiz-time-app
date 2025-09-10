@@ -1,8 +1,8 @@
 <template>
   <div class="tasks-card mt-8">
     <div class="header">
-      <div class="title">
-        <v-icon size="20">fas fa-circle-info</v-icon>
+      <div class="title px-2">
+        <v-icon color="red" size="20">qt:qt-circleInfo</v-icon>
         <h3>4 مهام لم تنجز</h3>
       </div>
       <v-btn variant="text" to="/home/tasks">عرض المزيد</v-btn>
@@ -34,9 +34,7 @@ const titleModify = (title) => {
 }
 .tasks-card .v-btn {
   color: #2c3e50;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 13px;
 }
 .header {
   display: flex;

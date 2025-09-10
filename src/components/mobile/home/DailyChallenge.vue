@@ -10,7 +10,7 @@
 </template>
 <style scoped>
 .card {
-  padding: 8px;
+  padding: 5px;
   direction: rtl;
   position: relative;
   margin-top: 15px;
@@ -28,7 +28,7 @@
   font-weight: 700;
 }
 .text {
-  font-size: 11px;
+  font-size: 10px;
   width: 60%;
 }
 .btn {

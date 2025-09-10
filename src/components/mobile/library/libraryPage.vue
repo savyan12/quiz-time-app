@@ -17,4 +17,7 @@
 .library-page h1 {
   font-weight: bold;
 }
+.library-page h3 {
+  color: #62626266;
+}
 </style>

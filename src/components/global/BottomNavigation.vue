@@ -57,7 +57,7 @@ watch(
       }"
       @click="navigateTo(page.value, index)"
     >
-      <v-icon>{{ page.icon }}</v-icon>
+      <v-icon size="22">{{ page.icon }}</v-icon>
       <span>{{ page.text }}</span>
     </button>
   </v-sheet>
