@@ -3,14 +3,14 @@
     <div class="header">
       <div class="title">
         <v-icon size="20">fas fa-circle-info</v-icon>
-        <h4>4 مهام لم تنجز</h4>
+        <h3>4 مهام لم تنجز</h3>
       </div>
-      <v-btn variant="text" to="/auth/login">عرض المزيد</v-btn>
+      <v-btn variant="text" to="/home/tasks">عرض المزيد</v-btn>
     </div>
     <v-row class="my-1">
       <v-col cols="6" v-for="value in 4" :key="value">
         <v-card elevation="0">
-          <v-card-title style="font-size: 15px">كلام كلام كلام بللاللابللب</v-card-title>
+          <v-card-title style="font-size: 15px">كلام </v-card-title>
           <div class="time-and-type">
             <v-chip color="#F82B74" size="small">رياضة 1</v-chip>
             <div class="time">

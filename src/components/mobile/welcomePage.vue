@@ -33,8 +33,15 @@
   align-items: center;
   gap: 16px;
 }
+.welcome-page .image {
+  width: 60%;
+  margin: 0 auto;
+}
+.welcome-page .image img {
+  width: 100%;
+}
 .title {
-  margin-top: 40px;
+  margin-top: 30px;
   font-weight: 900;
   font-size: 45px;
   background: linear-gradient(to right, #ffc233, #6cbc7f, #52c7db);
@@ -42,7 +49,7 @@
   -webkit-text-fill-color: transparent;
 }
 .welcome-message {
-  margin: 40px 0px;
+  margin: 5px 0px;
   align-self: flex-start;
   text-align: start;
 }
@@ -54,8 +61,9 @@
   -webkit-text-fill-color: transparent;
 }
 .welcome-message p {
+  font-size: 14px;
   line-height: 25px;
-  width: 92%;
+  width: 90%;
   color: #756f6f;
 }
 .welcome-message span {
@@ -64,6 +72,7 @@
   font-weight: bold;
 }
 .btn-conatiner {
+  margin-top: 25%;
   width: 70%;
   display: flex !important;
   align-items: center !important;

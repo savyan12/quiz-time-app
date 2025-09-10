@@ -25,6 +25,8 @@ import TextInput from '@/components/global/TextInput.vue'
 </script>
 <style scoped>
 .signup-page {
+  position: relative;
+  top: 55px;
   direction: rtl;
   padding: 5px;
   width: 100%;
@@ -36,7 +38,6 @@ import TextInput from '@/components/global/TextInput.vue'
   align-items: center;
 }
 h1 {
-  margin-top: 90px;
   font-size: 35px;
   background: linear-gradient(to left, #ffc233, #6cbc7f, #52c7db);
   -webkit-background-clip: text;

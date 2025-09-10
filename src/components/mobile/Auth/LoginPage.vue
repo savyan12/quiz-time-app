@@ -30,13 +30,13 @@ import TextInput from '@/components/global/TextInput.vue'
   width: 100%;
   min-height: 100vh;
   background-image: url('@/assets/background/auth.png');
-  background-size: 100% 100vh;
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 h1 {
-  margin-top: 90px;
+  margin-top: 45px;
   font-size: 35px;
   background: linear-gradient(to left, #ffc233, #6cbc7f, #52c7db);
   -webkit-background-clip: text;
@@ -54,7 +54,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 form span {
   padding: 0 10px;

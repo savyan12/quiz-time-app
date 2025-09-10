@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
+  <div class="libary">
     <div class="mobile-render" v-if="xs">
-      <HomePage />
+      <LibraryPage />
     </div>
   </div>
 </template>
 <script setup>
-import HomePage from '@/components/mobile/home/HomePage.vue'
+import LibraryPage from '@/components/mobile/library/libraryPage.vue'
 import { useDisplay } from 'vuetify/lib/composables/display'
 const { xs } = useDisplay()
 </script>

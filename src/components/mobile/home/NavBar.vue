@@ -46,6 +46,7 @@ const active = ref(false)
 </script>
 <style scoped>
 .container {
+  width: 100%;
   direction: rtl;
 }
 .nav-bar {

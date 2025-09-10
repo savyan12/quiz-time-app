@@ -6,6 +6,10 @@ import MenuIcon from '@/components/icons/MenuIcon.vue'
 import BellIcon from '@/components/icons/BellIcon.vue'
 import CheckBadge from '@/components/icons/CheckBadge.vue'
 import ClockIcon from '@/components/icons/ClockIcon.vue'
+import TrashIcon from '@/components/icons/TrashIcon.vue'
+import CirclePlusIcon from '@/components/icons/CirclePlusIcon.vue'
+import PenOutlinedIcon from '@/components/icons/PenOutlinedIcon.vue'
+import TashOutlinedIcon from '@/components/icons/TashOutlinedIcon.vue'
 const BpIcons = {
   facebook: FacebookIcon,
   apple: AppleIcon,
@@ -14,6 +18,10 @@ const BpIcons = {
   bell: BellIcon,
   checkBadge: CheckBadge,
   clock: ClockIcon,
+  trash: TrashIcon,
+  circlePlus: CirclePlusIcon,
+  pen: PenOutlinedIcon,
+  trashOutlined: TashOutlinedIcon,
 }
 
 const QTIconSet = {

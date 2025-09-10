@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <div class="home-page mb-15">
     <v-container>
       <!-- nav -->
       <NavBar />
@@ -7,6 +7,8 @@
       <DailyChallenge />
       <!-- tasks -->
       <tasksCard />
+      <!-- student bag -->
+      <StudentBag />
       <!-- Appointments -->
       <AppointmentsCard />
       <!-- Last activites -->
@@ -20,6 +22,7 @@ import DailyChallenge from './DailyChallenge.vue'
 import tasksCard from './TasksCard.vue'
 import AppointmentsCard from './AppointmentsCard.vue'
 import LatestActivities from './LatestActivities.vue'
+import StudentBag from './StudentBag.vue'
 </script>
 <style scoped>
 .home-page {

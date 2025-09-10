@@ -10,8 +10,8 @@ const router = createRouter({
         hideBottomNavigation: true,
         animation: {
           isAnimated: true,
-          enterActive: 'animate__animated animate__zoomIn',
-          leaveActive: 'animate__animated animate__zoomOut',
+          enterActive: '',
+          leaveActive: '',
         },
       },
       component: WelcomeView,
@@ -23,11 +23,24 @@ const router = createRouter({
         hideBottomNavigation: false,
         animation: {
           isAnimated: true,
-          enterActive: 'animate__animated animate__slideInUp',
-          leaveActive: 'animate__animated animate__slideOutUp',
+          enterActive: 'animate__animated animate__fadeInUp',
+          leaveActive: 'animate__animated animate__fadeOutUp',
         },
       },
       component: () => import('../Views/HomeView.vue'),
+    },
+    {
+      path: '/library',
+      name: 'library',
+      meta: {
+        hideBottomNavigation: false,
+        animation: {
+          isAnimated: true,
+          enterActive: 'animate__animated animate__fadeInUp',
+          leaveActive: 'animate__animated animate__fadeOutUp',
+        },
+      },
+      component: () => import('../Views/LibraryView.vue'),
     },
     {
       path: '/rank',
@@ -36,11 +49,24 @@ const router = createRouter({
         hideBottomNavigation: false,
         animation: {
           isAnimated: true,
-          enterActive: 'animate__animated animate__slideInRight',
-          leaveActive: 'animate__animated animate__slideOutLeft',
+          enterActive: 'animate__animated animate__fadeInUp',
+          leaveActive: 'animate__animated animate__fadeOutUp',
         },
       },
       component: () => import('../Views/RankView.vue'),
+    },
+    {
+      path: '/home/tasks',
+      name: 'tasks',
+      meta: {
+        hideBottomNavigation: true,
+        animation: {
+          isAnimated: true,
+          enterActive: 'animate__animated animate__fadeInUp',
+          leaveActive: 'animate__animated animate__fadeOutUp',
+        },
+      },
+      component: () => import('../Views/tools/TasksView.vue'),
     },
     {
       path: '/auth/login',

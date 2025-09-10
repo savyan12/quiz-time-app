@@ -4,7 +4,7 @@
     <transition
       name="page"
       :enter-active-class="route.meta.animation.enterActive || 'animate__animated animate__fadeIn'"
-      :leave-active-class="route.meta.animation.leaveActive || 'animate__animated animate__fadeIn'"
+      :leave-active-class="route.meta.animation.leaveActive || 'animate__animated animate__fadeOut'"
       mode="out-in"
     >
       <component :is="Component" :key="route.fullPath" />
@@ -64,13 +64,13 @@ import BottomNavigation from './components/global/BottomNavigation.vue'
 
 /* css */
 .primary-font {
-  font-family: 'Almarai';
+  font-family: 'Almarai' !important;
 }
 .secondary-font {
   font-family: 'TheYearofHandicrafts';
 }
 .english-font {
-  font-family: 'Nunito';
+  font-family: 'Nunito' !important;
 }
 * {
   padding: 0;
@@ -87,6 +87,6 @@ import BottomNavigation from './components/global/BottomNavigation.vue'
 /*Animation duration */
 
 .animate__animated {
-  --animate-duration: 0.3s;
+  --animate-duration: 0.4s;
 }
 </style>
