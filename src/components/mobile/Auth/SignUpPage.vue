@@ -7,7 +7,6 @@
       <TextInput placeholder="رقم الهاتف" />
       <TextInput placeholder=" كلمة السر" type="password" />
       <TextInput placeholder=" تأكيد كلمة السر" type="password" />
-      <span>هل نسيت كلمة السر ؟</span>
       <v-btn class="secondary-font" elevation="3" style="font-size: 20px"> إنشاء حساب </v-btn>
       <h4 class="my-1" @click="$router.push('/auth/login')">عندك حساب ؟</h4>
       <div class="o-aurh-box">
@@ -66,6 +65,7 @@ form .v-btn {
   width: 90%;
   height: 45px;
   border-radius: 10px;
+  font-size: 18px !important;
   color: #ffffff;
   background: linear-gradient(to left, #ffc233, #6cbc7f, #52c7db);
 }

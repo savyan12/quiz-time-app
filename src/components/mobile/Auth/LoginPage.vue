@@ -66,6 +66,7 @@ form .v-btn {
   width: 90%;
   height: 45px;
   border-radius: 10px;
+  font-size: 18px !important;
   color: #ffffff;
   background: linear-gradient(to left, #ffc233, #6cbc7f, #52c7db);
 }

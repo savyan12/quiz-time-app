@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const pages = ref([
-  { value: 'categories', icon: 'fas fa-bars', text: 'الأقسام' },
+  { value: 'specializations', icon: 'fas fa-bars', text: 'الأقسام' },
   { value: 'library', icon: 'fas fa-book', text: 'المكتبة' },
   { value: 'home', icon: 'fas fa-home', text: 'الرئيسية' },
   { value: 'rank', icon: 'fas fa-trophy', text: 'الصدارة' },
