@@ -8,9 +8,10 @@
       <!-- user rank -->
       <UserRank />
       <!-- top -->
-      <v-tabs-window class="mt-15" v-model="tab">
+      <v-tabs-window class="mt-3" v-model="tab">
         <RankTab :tab="0" />
       </v-tabs-window>
+      <UsersList />
     </v-container>
   </div>
 </template>
@@ -19,6 +20,7 @@ import { ref } from 'vue'
 import RankTabHeader from './RankTabHeader.vue'
 import UserRank from './UserRank.vue'
 import RankTab from './RankTab.vue'
+import UsersList from './UsersList.vue'
 
 const tab = ref(0)
 </script>

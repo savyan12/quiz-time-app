@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="user-rank mx-auto my-8" width="90%" height="70">
+  <v-sheet class="user-rank mx-auto mt-8" width="90%" height="70">
     <h5>أداءً ممتاز أستمر ياوحش !</h5>
     <v-sheet class="user-rank-top" width="50" height="50" rounded="lg">#4</v-sheet>
   </v-sheet>

@@ -18,12 +18,11 @@ defineProps({ isNumberOne: Boolean })
   gap: 3px;
   font-size: 22px;
   color: #ffffff;
-  z-index: 1;
 }
 .number-1 {
   position: absolute;
   top: -10px;
-  z-index: 100;
+  z-index: 10;
 }
 .v-sheet {
   border-radius: 5px;

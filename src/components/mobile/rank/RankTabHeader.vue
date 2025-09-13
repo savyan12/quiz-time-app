@@ -31,8 +31,8 @@ const tab = ref(0)
 defineEmits(['modelValue'])
 </script>
 <style scoped>
-.rank-page .tabs {
-  margin-top: 30px;
+.tabs {
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;

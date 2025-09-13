@@ -17,9 +17,9 @@ defineProps({
 </script>
 <style scoped>
 .tab {
+  margin: 40px 0;
   width: 100%;
   min-height: 50vh;
-  margin: 40px 0;
 }
 .stage-top-3 {
   position: relative;
