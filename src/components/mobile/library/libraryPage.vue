@@ -1,7 +1,7 @@
 <template>
   <div class="library-page">
-    <img width="100" src="@/assets/images/books.png" alt="library" />
-    <h1 class="primary-font text-h3">المكتبة</h1>
+    <img width="120" src="@/assets/images/books.png" alt="library" />
+    <h1 class="primary-font text-h3 my-1">المكتبة</h1>
     <h3>.....قريباً</h3>
   </div>
 </template>

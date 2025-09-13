@@ -1,129 +1,114 @@
 <template>
   <div class="specialization-page">
     <v-layout>
-      <v-app-bar class="pa-1 py-2" elevation="0">
-        <div class="container mb-3">
-          <v-btn color="#0F172A" variant="text" :ripple="false" icon @click="back"
-            ><v-icon class="mt-1" size="20 " v-if="tab > 1">fas fa-chevron-left</v-icon></v-btn
-          >
-          <h3>{{ tab > 1 ? title : `الفصول الدراسية` }}</h3>
-          <v-btn size="small" :ripple="false"></v-btn>
-        </div>
-      </v-app-bar>
+      <PageHeader
+        :title="title"
+        :tab="tabs"
+        :add-mode="addMode"
+        @change-mode="() => (addMode = false)"
+        @go-back="backTab"
+      />
       <v-main class="mt-5">
         <v-container>
-          <!-- search  -->
           <SearchBar />
-          <!-- tabs -->
           <v-locale-provider rtl>
-            <v-card class="mt-10 tabs" elevation="0">
-              <v-tabs-window class="bg-transparent" v-model="tab">
-                <v-tabs-window-item :value="1">
-                  <v-list>
-                    <v-list-item
-                      v-for="(item, i) in items"
-                      :key="i"
-                      :value="item"
-                      color="#0f0f0f"
-                      variant="text"
-                      @click="nextPage(item)"
-                      ><template v-slot:append>
-                        <v-icon icon="fas fa-chevron-left" size="15" />
-                      </template>
-
-                      <v-list-item-title
-                        style="font-weight: bold"
-                        v-text="item.specializationName"
-                      ></v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-tabs-window-item>
-                <v-tabs-window-item :value="2">
-                  <v-list>
-                    <v-list-item
-                      v-for="(item, i) in specialization.semesters"
-                      :key="i"
-                      :value="item"
-                      color="#0f0f0f"
-                      variant="text"
-                      @click="nextPage(item)"
-                      ><template v-slot:append>
-                        <v-icon icon="fas fa-chevron-left" size="15" />
-                      </template>
-
-                      <v-list-item-title
-                        style="font-weight: bold"
-                        v-text="item.semesterName"
-                      ></v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-tabs-window-item>
-                <v-tabs-window-item :value="3">
-                  <v-list>
-                    <v-list-item value="jbh" color="#0f0f0f" variant="text" @click="nextPage()"
-                      ><template v-slot:append>
-                        <v-icon icon="fas fa-chevron-left" size="15" />
-                      </template>
-                      <v-list-item-title style="font-weight: bold">
-                        المقررات الدراسية
-                      </v-list-item-title>
-                    </v-list-item>
-                    <v-list-item value="vgb" color="#0f0f0f" variant="text"
-                      ><template v-slot:append>
-                        <v-icon icon="fas fa-chevron-left" size="15" />
-                      </template>
-                      <v-list-item-title style="font-weight: bold"> شيتات </v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-tabs-window-item>
-                <v-tabs-window-item :value="4">
-                  <v-row class="my-4 pa-3">
-                    <v-col cols="6" v-for="subject in subjects">
-                      <v-card
-                        class="text-center bg-indigo-darken-2 rounded-lg"
-                        width="100%"
-                        height="70"
-                        ><h4 class="mt-5">{{ subject.arabic_name }}</h4></v-card
-                      >
-                    </v-col>
-                  </v-row>
-                </v-tabs-window-item>
-              </v-tabs-window>
+            <v-card class="mt-13" elevation="0">
+              <v-window v-model="tabs">
+                <SpecializationTab
+                  :tab="1"
+                  :items="items"
+                  :itemKeyProp="
+                    (item) => {
+                      return item.specializationName
+                    }
+                  "
+                  @next-tab="(index) => nextTab(index)"
+                />
+                <SpecializationTab
+                  :tab="2"
+                  :items="semesters"
+                  :itemKeyProp="
+                    (item) => {
+                      return item.semesterName
+                    }
+                  "
+                  @next-tab="(index) => nextTab(index)"
+                />
+                <SpecializationTab
+                  :tab="3"
+                  :items="[{ title: 'المقررات الدراسية' }, { title: 'شيتات' }]"
+                  :itemKeyProp="
+                    (item) => {
+                      return item.title
+                    }
+                  "
+                  @next-tab="(index) => nextTab(index)"
+                />
+                <SpecializationTab
+                  :tab="4"
+                  :items="subjects"
+                  :itemKeyProp="
+                    (item) => {
+                      return item.arabic_name
+                    }
+                  "
+                  :add-mode="addMode"
+                  @next-tab="(index) => nextTab(index)"
+                />
+              </v-window>
             </v-card>
           </v-locale-provider>
         </v-container>
+        <Transition
+          enter-active-class="animate__animated animate__fadeInUp"
+          leave-active-class="animate__animated animate__fadeOutDown"
+        >
+          <button class="add-btn" @click="addMode = true" v-show="tabs === 4">
+            <span>اضافة مقررات</span><v-icon class="mx-2" size="22">qt:qt-circlePlus</v-icon>
+          </button>
+        </Transition>
       </v-main>
     </v-layout>
-    <v-btn class="add-btn" color="#1DC417" variant="tonal" v-if="tab === 4"
-      ><v-icon class="mx-1" size="19">qt:qt-circlePlus</v-icon> اضف مقررات الى موادك</v-btn
-    >
   </div>
 </template>
 <script setup>
 import { ref } from 'vue'
 import SearchBar from './SearchBar.vue'
-const tab = ref(1)
-const title = ref('')
-const specialization = ref({})
+import SpecializationTab from './specializationTab.vue'
+import PageHeader from './PageHeader.vue'
+
+// flags
+const addMode = ref(false)
+//data
+const tabs = ref(1)
+const semesters = ref([])
 const subjects = ref([])
-const back = () => {
-  if (tab.value === 3) {
-    title.value = specialization.value.specializationName
+const title = ref('الفصول الدراسية')
+const titleHistory = ref(['الفصول الدراسية'])
+
+const nextTab = (index) => {
+  if (tabs.value === 1) {
+    semesters.value = items.value[index].semesters
+    title.value = items.value[index].specializationName
   }
-  if (tab.value > 1) {
-    tab.value--
+  if (tabs.value === 2) {
+    subjects.value = semesters.value[index].courses
+    title.value = semesters.value[index].semesterName
   }
+  if (tabs.value === 3 && index === 1) return
+
+  titleHistory.value.push(title.value)
+  tabs.value++
 }
-const nextPage = (value) => {
-  if (value && tab.value === 1) {
-    specialization.value = value
-    title.value = specialization.value.specializationName
-  } else if (tab.value === 2) {
-    subjects.value = value.courses
-    title.value = value.semesterName
-  }
-  tab.value = tab.value + 1
+
+const backTab = () => {
+  if (tabs.value === 1) return
+
+  titleHistory.value.pop()
+  title.value = titleHistory.value[titleHistory.value.length - 1]
+  tabs.value--
 }
+
 const items = ref([
   {
     specializationId: 1,
@@ -344,25 +329,23 @@ const items = ref([
   min-height: 100vh;
   background: #f5f5f5;
 }
-.container {
-  margin-top: 30px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.container h3 {
-  text-wrap: nowrap;
-}
-.tabs {
+.v-card {
   width: 95%;
   margin: 0 auto;
   border-radius: 10px;
 }
 .add-btn {
-  width: 90%;
-  left: 5%;
   position: fixed;
-  bottom: 80px;
+  bottom: 85px;
+  left: 20px;
+  width: 90%;
+  height: 50px;
+  background: #1dc4174d;
+  color: #0c8808da;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.add-btn:active {
+  background: #1dc41759;
 }
 </style>

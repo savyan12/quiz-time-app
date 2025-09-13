@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer v-model="status">
-    <v-sheet class="bg-white" width="100%" min-height="240" elevation="0">
+    <v-sheet class="bg-white" width="100%" min-height="200" elevation="0">
       <v-avatar size="80">
         <img
           class="w-100"

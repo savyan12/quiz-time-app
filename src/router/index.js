@@ -66,7 +66,7 @@ const router = createRouter({
           leaveActive: 'animate__animated animate__fadeOutDown',
         },
       },
-      component: () => import('../Views/specializations/SpecializationsView.vue'),
+      component: () => import('../Views/SpecializationsView.vue'),
     },
     {
       path: '/home/tasks',

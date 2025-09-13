@@ -24,7 +24,7 @@
 <style scoped>
 .v-card {
   width: 95%;
-  margin: 0 auto;
+  margin: 10px auto;
   display: flex;
   align-items: center;
   overflow: hidden;
