@@ -1,9 +1,9 @@
 <template>
   <v-tabs-window-item class="tab" :value="tab">
     <div class="top-3">
-      <TopUser class="rank-3" :isNumberOne="false" />
-      <TopUser class="rank-1" :isNumberOne="true" />
-      <TopUser class="rank-2" :isNumberOne="false" />
+      <TopUser class="rank-3" userName="احمد المسعي" points="1300" :isNumberOne="false" />
+      <TopUser class="rank-1" userName="عبد المالك مرسوكة" points="2001" :isNumberOne="true" />
+      <TopUser class="rank-2" userName="عمر الزرقاني" points="1850" :isNumberOne="false" />
     </div>
     <img class="stage-top-3" src="@/assets/images/top3.svg" alt="stage for top 3" />
   </v-tabs-window-item>
@@ -23,15 +23,15 @@ defineProps({
 }
 .stage-top-3 {
   position: relative;
-  top: 15vh;
-  width: 90%;
+  top: 16vh;
+  width: 91%;
   right: 5%;
 }
 .top-3 {
   padding: 0 5%;
-  width: 100%;
+  width: 97%;
   position: absolute;
-  top: 3%;
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -41,7 +41,7 @@ defineProps({
 }
 .top-3 .rank-3 {
   position: relative;
-  top: 8vh;
+  top: 9vh;
 }
 .top-3 .rank-2 {
   position: relative;

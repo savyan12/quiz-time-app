@@ -1,13 +1,17 @@
 <template>
-  <div class="top" :class="[{ 'not-number-1': !isNumberOne }]">
+  <div class="top">
     <img v-if="isNumberOne" class="number-1" src="@/assets/images/1.svg" alt="#1" />
     <v-avatar size="80" color="white"> </v-avatar>
-    <h6>احمد المسعي</h6>
-    <v-sheet width="80" height="30">2,300 نقطة</v-sheet>
+    <h6 :class="[{ 'not-number-1': !isNumberOne }]">{{ userName }}</h6>
+    <v-sheet width="70" height="30">{{ points }} نقطة</v-sheet>
   </div>
 </template>
 <script setup>
-defineProps({ isNumberOne: Boolean })
+defineProps({
+  isNumberOne: Boolean,
+  userName: { type: String, requir: true },
+  points: { type: Number, requir: true },
+})
 </script>
 <style scoped>
 .top {
@@ -15,7 +19,7 @@ defineProps({ isNumberOne: Boolean })
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
   font-size: 22px;
   color: #ffffff;
 }
@@ -26,13 +30,17 @@ defineProps({ isNumberOne: Boolean })
 }
 .v-sheet {
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
   padding: 5px;
   background: #9087e5;
   color: #ffffff;
 }
+h6 {
+  font-size: 14px;
+}
+
 .not-number-1 {
-  font-size: 20px;
+  font-size: 13px;
 }
 </style>
