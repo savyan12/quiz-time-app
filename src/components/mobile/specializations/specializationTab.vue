@@ -32,6 +32,7 @@
           v-for="(item, i) in items"
           :key="i"
           elevation="1"
+          @click="$router.push({ name: 'selectQuiz', params: { id: i } })"
         >
           {{ itemKeyProp(item) }}
         </v-sheet>

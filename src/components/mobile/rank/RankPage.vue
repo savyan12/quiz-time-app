@@ -13,6 +13,7 @@
       <!-- top -->
       <v-tabs-window class="mt-3" v-model="tab">
         <RankTab :tab="0" />
+        <RankTab :tab="1" />
       </v-tabs-window>
       <UsersList :items="items" />
     </v-container>

@@ -14,6 +14,7 @@ import CircleInfoIcon from '@/components/icons/CircleInfoIcon.vue'
 import OnlineUser from '@/components/icons/OnlineUser.vue'
 import TermsIcon from '@/components/icons/TermsIcon.vue'
 import PcCodeIcon from '@/components/icons/PcCodeIcon.vue'
+import BookIcon from '@/components/icons/BookIcon.vue'
 const BpIcons = {
   facebook: FacebookIcon,
   apple: AppleIcon,
@@ -30,6 +31,7 @@ const BpIcons = {
   onlineUser: OnlineUser,
   terms: TermsIcon,
   pcCode: PcCodeIcon,
+  book: BookIcon,
 }
 
 const QTIconSet = {

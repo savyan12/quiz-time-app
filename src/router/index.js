@@ -69,6 +69,19 @@ const router = createRouter({
       component: () => import('../Views/SpecializationsView.vue'),
     },
     {
+      path: '/specializations/:id',
+      name: 'selectQuiz',
+      meta: {
+        hideBottomNavigation: false,
+        animation: {
+          isAnimated: true,
+          enterActive: 'animate__animated animate__fadeInDown',
+          leaveActive: 'animate__animated animate__fadeOutDown',
+        },
+      },
+      component: () => import('../Views/dynamic/QuizSelectView.vue'),
+    },
+    {
       path: '/home/tasks',
       name: 'tasks',
       meta: {

@@ -6,8 +6,8 @@ const pages = ref([
   { value: 'specializations', icon: 'fas fa-bars', text: 'الأقسام' },
   { value: 'library', icon: 'fas fa-book', text: 'المكتبة' },
   { value: 'home', icon: 'fas fa-home', text: 'الرئيسية' },
-  { value: 'rank', icon: 'fas fa-trophy', text: 'الصدارة' },
-  { value: 'profile', icon: 'fas fa-user-graduate', text: 'ملفي' },
+  { value: 'rank', icon: 'fas fa-trophy', text: 'المتصدرين' },
+  { value: 'profile', icon: 'fas fa-user-graduate', text: 'ملفك' },
 ])
 
 const route = useRoute()

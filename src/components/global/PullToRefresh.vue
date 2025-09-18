@@ -11,7 +11,7 @@
   >
     <!-- الـ indicator -->
     <div class="ptr-indicator" v-show="loading || distance > 0">
-      <v-progress-circular indeterminate color="primary" size="24" />
+      <v-progress-circular indeterminate color="#495eca" size="26" />
     </div>
 
     <!-- المحتوى -->
