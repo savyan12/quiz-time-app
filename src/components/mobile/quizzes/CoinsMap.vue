@@ -2,11 +2,20 @@
   <div class="coins-area" :style="{ minHeight: `${startTop + (coins.length - 1) * gap + 8}vh` }">
     <div v-for="(c, i) in coins" :key="`coin-${i}`" class="coin-wrap" :style="coinStyle(i)">
       <!-- keep QuizCoin as-is inside wrapper -->
-      <QuizCoin />
+      <QuizCoin :border="border" :bg="bg" />
     </div>
   </div>
 </template>
 <script setup>
+defineProps({
+  bg: {
+    type: String,
+  },
+  border: {
+    type: String,
+  },
+})
+
 import QuizCoin from './QuizCoin.vue'
 
 // constants you can tweak to match the image exactly:

@@ -2,7 +2,11 @@
   <div class="select-quiz-page">
     <v-container>
       <QuizSelectHeader />
-      <QuizzesList />
+      <QuizzesList bg="#4FC7D9" border="#0D9FB5" />
+      <QuizzesList bg="#FFDC6E" border="#CFA214" />
+      <QuizzesList bg="#C6E672" border="#93CA07" />
+      <br />
+      <br />
     </v-container>
   </div>
 </template>
