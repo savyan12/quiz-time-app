@@ -1,6 +1,8 @@
 <template>
   <div class="header">
-    <button class="back"><v-icon size="20">fas fa-arrow-left</v-icon></button>
+    <button class="back">
+      <v-icon size="20" @click="$router.back()">fas fa-arrow-left</v-icon>
+    </button>
     <h2>كهربائية 2</h2>
   </div>
 </template>
