@@ -67,7 +67,7 @@ watch(
 .bottom-navigation {
   padding: 10px;
   width: 100%;
-  height: 60px;
+  height: 70px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   position: fixed;
@@ -100,3 +100,11 @@ watch(
   margin-top: 4px;
 }
 </style>
+<!-- 
+
+{
+title:"كهربائية 2 - جزئية النصفي "
+quiz_list:[{name: "التيار المتردد", icon: "fas fa-star", total_time:20, total_questions: 14}] // خليهم من 7 الى 10 نتائج
+}
+
+-->

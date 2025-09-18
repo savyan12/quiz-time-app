@@ -1,8 +1,7 @@
 <template>
-  <div class="coins-area" :style="{ minHeight: `${startTop + (coins.length - 1) * gap + 8}vh` }">
-    <div v-for="(c, i) in coins" :key="`coin-${i}`" class="coin-wrap" :style="coinStyle(i)">
-      <!-- keep QuizCoin as-is inside wrapper -->
-      <QuizCoin :border="border" :bg="bg" />
+  <div class="coins-area" :style="{ minHeight: `${startTop + (data.length - 1) * gap + 8}vh` }">
+    <div v-for="(quiz, i) in data" :key="`coin-${i}`" class="coin-wrap" :style="coinStyle(i)">
+      <QuizCoin :quiz="quiz" :border="border" :bg="bg" :icon="quiz.icon" />
     </div>
   </div>
 </template>
@@ -14,18 +13,18 @@ defineProps({
   border: {
     type: String,
   },
+  data: {
+    type: Array,
+  },
 })
-
+import { computed } from 'vue'
 import QuizCoin from './QuizCoin.vue'
-
 // constants you can tweak to match the image exactly:
-const coins = Array.from({ length: 7 }) // number of coins
 const amplitude = 18 // horizontal amplitude (vw). increase -> wider curve
 const frequency = 0.9 // how quickly the wave oscillates (radians per index)
 const phase = 0.4 // shifts the whole wave left/right (tune to start on right/left)
 const gap = 14 // vertical gap between coins (vh)
 const startTop = 6 // top offset from start of wrapper (vh)
-
 const coinStyle = (i) => {
   // compute horizontal offset in vw using sine wave
   const offset = amplitude * Math.sin(i * frequency + phase)
