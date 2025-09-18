@@ -12,7 +12,7 @@
         <template v-for="(user, index) in users" :key="index">
           <div class="user-item" :class="[{ 'd-none': user.top < 4 }]">
             <div class="user">
-              <v-avatar size="70">
+              <v-avatar size="60">
                 <img width="100%" :src="user.imageUrl" alt="user image" />
               </v-avatar>
               <div class="info">
