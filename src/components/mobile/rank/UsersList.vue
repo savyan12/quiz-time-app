@@ -3,10 +3,8 @@
   <div v-if="sheetHeight > 28" class="overlay" @click="closeSheet"></div>
   <!-- Bottom Sheet -->
   <div class="bottom-sheet" :style="{ height: sheetHeight + 'vh' }">
-    <!-- الهاندل -->
     <div class="drag-handle" @mousedown="startDrag" @touchstart="startDrag"></div>
 
-    <!-- القائمة -->
     <div class="list-content">
       <v-infinite-scroll @load="load">
         <template v-for="(user, index) in users" :key="index">
@@ -41,12 +39,11 @@ const users = ref(
   })),
 )
 
-let count = 70 // نحفظ عدد المستخدمين الحاليين
+let count = 70
 
 async function api() {
   return new Promise((resolve) => {
     setTimeout(() => {
-      // نولد 10 مستخدمين جدد بنفس الشكل
       const newUsers = Array.from({ length: 10 }, (_, i) => ({
         firstName: `First${count + i + 1}`,
         lastName: `Last${count + i + 1}`,

@@ -13,9 +13,44 @@
       <!-- Tooltip 
       :style="`--tooltip-bg: ${bg};`" 
       -->
-      <div class="tool-tip" :style="`--tooltip-bg: ${bg};;`" v-show="toolTip">
-        <span>هذا مثال للتولتيب</span>
-      </div>
+      <transition
+        enter-active-class="animate__animated animate__fadeInTopLeft"
+        leave-active-class="animate__animated animate__fadeOutTopLeft"
+      >
+        <div class="tool-tip" :style="`--tooltip-bg: ${border};;`" v-show="toolTip">
+          <h4>إرشادات</h4>
+          <div class="my-4">
+            <div class="row">
+              <h5>يرمز إلى وجود منهج نصفي</h5>
+              <v-icon size="20" color="#4FC7D9">fas fa-circle</v-icon>
+            </div>
+            <div class="row">
+              <h5>يرمز إلى وجود منهج نهائي</h5>
+              <v-icon size="20" color="#FFDC6E">fas fa-circle</v-icon>
+            </div>
+            <div class="row">
+              <h5>يرمز إلى وجود اسئلة سنوات و مراجعة</h5>
+              <v-icon size="20" color="#C6E672">fas fa-circle</v-icon>
+            </div>
+            <div class="row">
+              <h5>يرمز إلى اسئلة و افكار مستوى وحش</h5>
+              <v-icon size="20" color="#EA1C1C">fas fa-skull</v-icon>
+            </div>
+            <div class="row">
+              <h5>ترمز إلى وجود أسئلة إمتحانات نهائية</h5>
+              <v-icon size="20" color="#C6E672">fas fa-leaf</v-icon>
+            </div>
+          </div>
+          <v-divider class="mx-auto my-3" :thickness="1" opacity="0.6" />
+          <ul class="text-start" dir="rtl">
+            <li>كل دائرة تحتوي على اختبار مختلف و مجموع نقاط مختلف</li>
+            <li>
+              يمكن تحصيل النقاط من المحاولة الأولى فقط من كل إختبار وعند إجراء الإختبار من جديد لا
+              تحسب
+            </li>
+          </ul>
+        </div>
+      </transition>
     </div>
     <CoinsMap :data="data.quiz_list" :bg="bg" :border="border" />
     <br />
@@ -80,7 +115,7 @@ const toolTip = ref(false)
 /* Tooltip */
 .tool-tip {
   width: 90%;
-  height: 30%;
+  min-height: 35%;
   position: absolute;
   top: 14%;
   left: 10px;
@@ -88,8 +123,8 @@ const toolTip = ref(false)
   padding: 15px;
   z-index: 100;
   text-align: end;
-  background: var(--tooltip-bg);
-  color: #ffffff;
+  color: #626262;
+  background: #ffffff;
   box-shadow: 0 2px 13px -3px rgba(97, 97, 97, 0.69);
 }
 
@@ -103,5 +138,19 @@ const toolTip = ref(false)
   border-width: 10px;
   border-style: solid;
   border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+.row {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+ul {
+  padding: 0 14px;
+}
+ul li {
+  margin: 6px 0;
+  font-size: 13px;
 }
 </style>
