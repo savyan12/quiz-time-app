@@ -14,36 +14,32 @@
       </v-app-bar>
       <v-main class="mt-10">
         <v-container>
-          <v-card
-            class="rounded-xl px-1 mb-4"
-            width="100%"
-            min-height="80"
-            v-for="task in tasks"
-            :key="task"
-            elevation="0"
-            dir="rtl"
-          >
-            <div class="text">
-              <v-card-title> {{ task.title }} </v-card-title>
-              <v-card-actions class="mx-2">
-                <v-chip color="#12A6EC" size="small">{{ task.type }}</v-chip>
-                <div class="time">
-                  <p :style="`color:#F82B74`">{{ task.time }}</p>
-                  <v-icon size="15" color="red">qt:qt-clock</v-icon>
+          <SwipAction v-for="(task, i) in tasks" :key="task" :animate="i === 0">
+            <template v-slot:item>
+              <v-card class="px-1 mb-4" width="100%" min-height="80" elevation="0" dir="rtl">
+                <div class="text">
+                  <v-card-title> {{ task.title }} </v-card-title>
+                  <v-card-actions class="mx-2">
+                    <v-chip color="#12A6EC" size="small">{{ task.type }}</v-chip>
+                    <div class="time">
+                      <p :style="`color:#F82B74`">{{ task.time }}</p>
+                      <v-icon size="15" color="red">qt:qt-clock</v-icon>
+                    </div>
+                  </v-card-actions>
                 </div>
-              </v-card-actions>
-            </div>
-            <div class="edits" v-if="mode === 'e'">
-              <v-btn color="green" variant="plain" icon><v-icon>qt:qt-pen</v-icon></v-btn>
-            </div>
-            <div class="delete" v-else-if="mode === 'd'">
-              <v-btn color="red" variant="plain" icon><v-icon>qt:qt-trashOutlined</v-icon></v-btn>
-            </div>
-          </v-card>
+                <div class="edits" v-if="mode === 'e'">
+                  <v-btn color="green" variant="plain" icon><v-icon>qt:qt-pen</v-icon></v-btn>
+                </div>
+                <div class="delete" v-else-if="mode === 'd'">
+                  <v-btn color="red" variant="plain" icon
+                    ><v-icon>qt:qt-trashOutlined</v-icon></v-btn
+                  >
+                </div>
+              </v-card>
+            </template>
+          </SwipAction>
+
           <div class="actions">
-            <v-btn color="#FF0000" size="50" variant="tonal" @click="changeMoode('d')" icon
-              ><v-icon size="23">qt:qt-trash</v-icon></v-btn
-            >
             <v-btn color="#0F8707" size="50" variant="tonal" @click="changeMoode('e')" icon
               ><v-icon size="25">qt:qt-circlePlus</v-icon></v-btn
             >
@@ -55,6 +51,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+import SwipAction from '../global/SwipAction.vue'
 
 const mode = ref(null)
 const tasks = ref([
@@ -104,18 +101,19 @@ const changeMoode = (m) => {
   gap: 5px;
 }
 .actions {
-  padding: 15px;
+  direction: rtl;
+  padding: 0 15px;
   position: fixed;
   bottom: 15px;
   left: 2px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: #f5f5f5;
+  z-index: 100;
 }
 .v-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 20px;
 }
 </style>

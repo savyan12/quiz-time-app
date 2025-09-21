@@ -56,6 +56,19 @@ const router = createRouter({
       component: () => import('../Views/RankView.vue'),
     },
     {
+      path: '/profile',
+      name: 'profile',
+      meta: {
+        hideBottomNavigation: false,
+        animation: {
+          isAnimated: true,
+          enterActive: 'animate__animated animate__fadeInDown',
+          leaveActive: 'animate__animated animate__fadeOutDown',
+        },
+      },
+      component: () => import('../Views/ProfileView.vue'),
+    },
+    {
       path: '/specializations',
       name: 'specializations',
       meta: {

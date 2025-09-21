@@ -15,6 +15,18 @@
 import BottomNavigation from './components/global/BottomNavigation.vue'
 </script>
 <style>
+* {
+  -webkit-user-select: none; /* Safari, iOS */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* Standard */
+}
+input,
+textarea {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 /* fonts */
 /* Almarai */
 @font-face {
