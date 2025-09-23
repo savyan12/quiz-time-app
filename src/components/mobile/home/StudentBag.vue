@@ -1,32 +1,54 @@
 <template>
   <div class="student-bag my-4" dir="rtl">
     <h3 class="my-4">مقرراتك الدراسية</h3>
+
+    <!-- الـ Slider -->
     <v-window v-model="onboarding">
       <v-window-item v-for="(group, index) in chunkedData" :key="`tab-${index}`" :value="index + 1">
-        <v-card class="d-flex flex-wrap justify-center pa-1" elevation="0" min-height="135">
-          <div class="container" v-for="(item, idx) in group" :key="`item-${idx}`">
-            <v-sheet class="ma-1 background" style="border-radius: 15px" width="145" height="55">
+        <v-card
+          class="d-flex flex-column justify-center align-center pa-2"
+          elevation="0"
+          min-height="135"
+        >
+          <div
+            class="row d-flex justify-center"
+            v-for="(row, rowIdx) in toRows(group)"
+            :key="`row-${rowIdx}`"
+          >
+            <v-sheet
+              v-for="(item, idx) in row"
+              :key="`item-${idx}`"
+              class="ma-1 background"
+              style="border-radius: 15px"
+              width="38vw"
+              height="55"
+            >
+              <!-- width="145" -->
               {{ item.title }}
             </v-sheet>
           </div>
         </v-card>
       </v-window-item>
     </v-window>
+
+    <!-- الـ Dots -->
     <v-card class="bg-transparent" elevation="0">
       <v-item-group v-model="onboarding" class="text-center" mandatory>
         <v-item v-for="n in length" :key="`btn-${n}`" v-slot="{ isSelected, toggle }" :value="n">
           <v-btn size="30" variant="text" icon @click="toggle">
-            <v-icon :color="isSelected ? 'primary' : '#EEEEEE'" size="10">fas fa-circle</v-icon>
+            <v-icon :color="isSelected ? 'primary' : '#EEEEEE'" size="10"> fas fa-circle </v-icon>
           </v-btn>
         </v-item>
       </v-item-group>
     </v-card>
   </div>
 </template>
+
 <script setup>
 import { computed, ref } from 'vue'
-const length = computed(() => chunkedData.value.length)
+
 const onboarding = ref(1)
+
 const Data = ref([
   { title: 'كتابة التقارير الفنية' },
   { title: 'الأنظمة الدقيقة' },
@@ -48,6 +70,7 @@ const Data = ref([
   { title: 'برمجة مرئية متقدمة' },
 ])
 
+// تقسيم البيانات بحيث كل Window فيه 4 مواد بالضبط
 const chunkedData = computed(() => {
   const chunks = []
   for (let i = 0; i < Data.value.length; i += 4) {
@@ -55,11 +78,24 @@ const chunkedData = computed(() => {
   }
   return chunks
 })
+
+// تقسيم الـ 4 مواد لصفوف (كل صف فيه 2 مواد)
+const toRows = (arr) => {
+  const rows = []
+  for (let i = 0; i < arr.length; i += 2) {
+    rows.push(arr.slice(i, i + 2))
+  }
+  return rows
+}
+
+const length = computed(() => chunkedData.value.length)
 </script>
+
 <style scoped>
 .v-card {
   background: transparent;
 }
+
 .v-sheet {
   display: flex;
   align-items: center;

@@ -7,9 +7,6 @@
             ><v-icon class="mt-1" size="20">fas fa-chevron-left</v-icon></v-btn
           >
           <h3>المهام</h3>
-          <div v-if="mode != null">
-            <v-icon size="20" @click="changeMoode(null)">fas fa-close</v-icon>
-          </div>
         </div>
       </v-app-bar>
       <v-main class="mt-10">
@@ -27,21 +24,13 @@
                     </div>
                   </v-card-actions>
                 </div>
-                <div class="edits" v-if="mode === 'e'">
-                  <v-btn color="green" variant="plain" icon><v-icon>qt:qt-pen</v-icon></v-btn>
-                </div>
-                <div class="delete" v-else-if="mode === 'd'">
-                  <v-btn color="red" variant="plain" icon
-                    ><v-icon>qt:qt-trashOutlined</v-icon></v-btn
-                  >
-                </div>
               </v-card>
             </template>
           </SwipAction>
 
           <div class="actions">
-            <v-btn color="#0F8707" size="50" variant="tonal" @click="changeMoode('e')" icon
-              ><v-icon size="25">qt:qt-circlePlus</v-icon></v-btn
+            <v-btn size="50" color="#ffffff" icon elevation="0"
+              ><v-icon size="25" color="#0F8707">qt:qt-circlePlus</v-icon></v-btn
             >
           </div>
         </v-container>
@@ -55,6 +44,36 @@ import SwipAction from '../global/SwipAction.vue'
 
 const mode = ref(null)
 const tasks = ref([
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
+  {
+    title: 'تسليم تقرير المهارات',
+    type: 'مهارات',
+    time: '2d:1h',
+  },
   {
     title: 'تسليم تقرير المهارات',
     type: 'مهارات',
@@ -76,9 +95,6 @@ const tasks = ref([
     time: '4d:6h',
   },
 ])
-const changeMoode = (m) => {
-  mode.value = m
-}
 </script>
 <style scoped>
 .tasks {
@@ -101,13 +117,9 @@ const changeMoode = (m) => {
   gap: 5px;
 }
 .actions {
-  direction: rtl;
-  padding: 0 15px;
   position: fixed;
+  right: 18px;
   bottom: 15px;
-  left: 2px;
-  width: 100%;
-  background: #f5f5f5;
   z-index: 100;
 }
 .v-card {

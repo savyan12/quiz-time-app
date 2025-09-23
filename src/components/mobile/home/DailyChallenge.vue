@@ -42,7 +42,11 @@
   color: #495eca;
   font-size: 12px;
 }
+.btn:active {
+  opacity: 0.7;
+}
 .v-sheet img {
+  /* width: 45vw; */
   width: 180px;
   position: absolute;
   top: -39%;

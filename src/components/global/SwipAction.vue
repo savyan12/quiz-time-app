@@ -30,42 +30,34 @@ const props = defineProps({
     default: false,
   },
 })
-
 const offset = ref(0)
-
-// لما يسحب المستخدم
 const touchHandlers = {
   left: () => {
-    offset.value = -80 // يسار → زر الحذف
+    offset.value = -80
   },
   right: () => {
-    offset.value = 80 // يمين → زر التعديل
+    offset.value = 80
   },
   end: () => {
-    // يرجع للوضع الطبيعي
     setTimeout(() => {
       offset.value = 0
     }, 1000)
   },
 }
-
 function deleteItem() {
   alert('Item deleted!')
 }
-
 function editItem() {
   alert('Edit clicked!')
 }
-
-// لو animate = true → نعمل حركة أول ما يركب الكومبوننت
 onMounted(() => {
   if (props.animate) {
     setTimeout(() => {
-      offset.value = -40 // يتحرك شوية يمين
+      offset.value = -40
       setTimeout(() => {
-        offset.value = 0 // يرجع
+        offset.value = 0
       }, 800)
-    }, 500) // تأخير بسيط بعد تحميل الصفحة
+    }, 500)
   }
 })
 </script>
@@ -76,37 +68,35 @@ onMounted(() => {
   overflow: hidden;
   margin-bottom: 12px;
 }
-
 .swipe-actions {
   position: absolute;
   inset: 0;
-  top: -12px;
+  top: -19px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px;
 }
-
 .delete-btn {
   width: 65px;
-  height: 85px;
+  height: 90px;
   color: #ffffff;
   background: #f03838;
+  border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   z-index: 1;
 }
-
 .edit-btn {
   width: 65px;
-  height: 85px;
+  height: 90px;
   color: #ffffff;
   background: #ffa361;
+  border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   z-index: 1;
 }
-
 .swipe-card {
   position: relative;
   transition: transform 0.3s ease;
